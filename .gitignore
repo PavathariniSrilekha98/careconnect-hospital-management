@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Production Builds
+dist/
+frontend/dist/
+backend/target/
+*.class
+
+# IDE & Editor Files
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# OS & Environment
+Thumbs.db
+.DS_Store
+*.log
+*.tmp
+.env
+.env.local
+
+# In-memory MongoDB runtime logs
+mongo*.log

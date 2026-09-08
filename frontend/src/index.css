@@ -1,0 +1,328 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Primary Brand Colors */
+  --color-primary: #0284c7;
+  --color-primary-dark: #0369a1;
+  --color-primary-light: #e0f2fe;
+  --color-primary-subtle: #f0f9ff;
+  
+  --color-secondary: #0f766e;
+  --color-secondary-light: #ccfbf1;
+
+  /* Healthcare Status Colors */
+  --status-serving: #059669;
+  --status-serving-bg: #ecfdf5;
+  --status-serving-border: #a7f3d0;
+
+  --status-called: #d97706;
+  --status-called-bg: #fffbeb;
+  --status-called-border: #fde68a;
+
+  --status-waiting: #2563eb;
+  --status-waiting-bg: #eff6ff;
+  --status-waiting-border: #bfdbfe;
+
+  --status-emergency: #dc2626;
+  --status-emergency-bg: #fef2f2;
+  --status-emergency-border: #fecaca;
+
+  --status-senior: #7c3aed;
+  --status-senior-bg: #f5f3ff;
+  --status-senior-border: #ddd6fe;
+
+  --status-completed: #475569;
+  --status-completed-bg: #f1f5f9;
+  --status-completed-border: #cbd5e1;
+
+  /* Neutrals */
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 70px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .fw-bold {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Cards & Containers */
+.med-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.med-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-md);
+}
+
+.med-card-flat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+/* Tokens Badges & Labels */
+.token-badge {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.05em;
+}
+
+.token-badge-lg {
+  font-size: 1.75rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+}
+
+.token-badge-xl {
+  font-size: 2.75rem;
+  padding: 16px 32px;
+  border-radius: var(--radius-lg);
+}
+
+.badge-serving {
+  background-color: var(--status-serving-bg);
+  color: var(--status-serving);
+  border: 1.5px solid var(--status-serving-border);
+}
+
+.badge-called {
+  background-color: var(--status-called-bg);
+  color: var(--status-called);
+  border: 1.5px solid var(--status-called-border);
+  animation: pulse-border 1.5s infinite;
+}
+
+.badge-waiting {
+  background-color: var(--status-waiting-bg);
+  color: var(--status-waiting);
+  border: 1.5px solid var(--status-waiting-border);
+}
+
+.badge-emergency {
+  background-color: var(--status-emergency-bg);
+  color: var(--status-emergency);
+  border: 1.5px solid var(--status-emergency-border);
+}
+
+.badge-senior {
+  background-color: var(--status-senior-bg);
+  color: var(--status-senior);
+  border: 1.5px solid var(--status-senior-border);
+}
+
+.badge-completed {
+  background-color: var(--status-completed-bg);
+  color: var(--status-completed);
+  border: 1.5px solid var(--status-completed-border);
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+  }
+}
+
+/* Action Buttons */
+.btn-med-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-med-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn-med-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-med-outline:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: var(--color-primary-dark);
+}
+
+/* Sidebar Dashboard Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.med-sidebar {
+  width: var(--sidebar-width);
+  background: #ffffff;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  height: calc(100vh - var(--header-height));
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 991.98px) {
+  .med-sidebar {
+    transform: translateX(-100%);
+  }
+  .med-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  .sidebar-margin-lg {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .med-sidebar {
+    transform: translateX(0) !important;
+  }
+  .sidebar-margin-lg {
+    margin-left: var(--sidebar-width) !important;
+    width: calc(100% - var(--sidebar-width)) !important;
+    max-width: calc(100vw - var(--sidebar-width)) !important;
+  }
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  margin: 4px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.935rem;
+  transition: all 0.15s ease;
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.sidebar-nav-item.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+/* Top App Header */
+.app-header {
+  height: var(--header-height);
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+/* Public TV Display Screen Styles */
+.public-tv-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #091e3a 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 24px;
+}
+
+.tv-serving-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px);
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tv-upcoming-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
