@@ -16,7 +16,7 @@ export const WebSocketProvider = ({ children }) => {
   useEffect(() => {
     // Setup STOMP client using SockJS fallback
     const client = new Client({
-      webSocketFactory: () => new SockJS('http://localhost:8080/ws-hospital'),
+      webSocketFactory: () => new SockJS(import.meta.env.VITE_WS_URL || 'http://localhost:8080/ws-hospital'),
       reconnectDelay: 3000,
       heartbeatIncoming: 4000,
       heartbeatOutgoing: 4000,
