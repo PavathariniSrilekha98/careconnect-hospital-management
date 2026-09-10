@@ -10,7 +10,6 @@ import DepartmentsPage from '../pages/public/DepartmentsPage';
 import DoctorsPage from '../pages/public/DoctorsPage';
 import LoginPage from '../pages/public/LoginPage';
 import RegisterPage from '../pages/public/RegisterPage';
-import LiveQueueDisplayPage from '../pages/public/LiveQueueDisplayPage';
 import QrCheckInPage from '../pages/public/QrCheckInPage';
 
 // Patient Pages
@@ -43,8 +42,7 @@ import AuditLogsPage from '../pages/admin/AuditLogsPage';
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* 1. Public Display & Kiosk (Full Screen No Main Navbar) */}
-      <Route path="/display" element={<LiveQueueDisplayPage />} />
+      {/* 1. Public Kiosk (Full Screen No Main Navbar) */}
       <Route path="/check-in" element={<QrCheckInPage />} />
 
       {/* 2. Public Pages with Standard Header & Footer */}

@@ -26,7 +26,7 @@ api.interceptors.response.use(
     if (error.response && error.response.status === 401) {
       // If token expired or invalid, clear and redirect to login if not already on public page
       const currentPath = window.location.pathname;
-      if (!currentPath.includes('/login') && !currentPath.includes('/register') && currentPath !== '/' && !currentPath.includes('/display') && !currentPath.includes('/check-in')) {
+      if (!currentPath.includes('/login') && !currentPath.includes('/register') && currentPath !== '/' && !currentPath.includes('/check-in')) {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         window.location.href = '/login?expired=true';
