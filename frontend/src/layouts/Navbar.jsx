@@ -11,7 +11,6 @@ import {
   CalendarPlus,
   CalendarCheck, 
   QrCode, 
-  Tv, 
   Shield, 
   Stethoscope, 
   Clock, 
@@ -126,16 +125,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   <QrCode size={15} />
                   QR Check-in
                 </Link>
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-link px-3 py-1.5 rounded-pill fw-medium text-sm d-flex align-items-center gap-1 text-secondary hover-bg-light"
-                  title="Open Hospital TV Waiting Board"
-                >
-                  <Tv size={15} />
-                  TV Display
-                </Link>
               </>
             ) : isAdmin ? (
               // 2. Admin Only Top Links
@@ -182,14 +171,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   <BarChart3 size={15} />
                   Analytics
                 </Link>
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  className="nav-link px-3 py-1.5 rounded-pill fw-medium text-sm d-flex align-items-center gap-1 text-secondary hover-bg-light"
-                >
-                  <Tv size={15} />
-                  TV Board
-                </Link>
               </>
             ) : isDoctor ? (
               // 3. Doctor Only Top Links
@@ -221,14 +202,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                 >
                   <CalendarCheck size={15} />
                   Appointments
-                </Link>
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  className="nav-link px-3 py-1.5 rounded-pill fw-medium text-sm d-flex align-items-center gap-1 text-secondary hover-bg-light"
-                >
-                  <Tv size={15} />
-                  TV Board
                 </Link>
               </>
             ) : (
@@ -268,14 +241,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                 >
                   <Clock size={15} />
                   Live Tracker
-                </Link>
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  className="nav-link px-3 py-1.5 rounded-pill fw-medium text-sm d-flex align-items-center gap-1 text-secondary hover-bg-light"
-                >
-                  <Tv size={15} />
-                  TV Board
                 </Link>
               </>
             )}
@@ -564,9 +529,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   <Link to="/check-in" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
                     QR Check-in Kiosk
                   </Link>
-                  <Link to="/display" target="_blank" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
-                    TV Queue Display Screen
-                  </Link>
                 </>
               ) : isAdmin ? (
                 <>
@@ -588,9 +550,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   <Link to="/admin/reports" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
                     Analytics
                   </Link>
-                  <Link to="/display" target="_blank" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
-                    TV Display Board
-                  </Link>
                 </>
               ) : isDoctor ? (
                 <>
@@ -605,9 +564,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   </Link>
                   <Link to="/doctor/appointments" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
                     Appointments
-                  </Link>
-                  <Link to="/display" target="_blank" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
-                    TV Display Board
                   </Link>
                 </>
               ) : (
@@ -626,9 +582,6 @@ const Navbar = ({ onToggleSidebar, showSidebarToggle }) => {
                   </Link>
                   <Link to="/patient/live-queue" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
                     Live Queue Tracker
-                  </Link>
-                  <Link to="/display" target="_blank" className="nav-link py-2 px-3 rounded-2 fw-medium text-dark hover-bg-light" onClick={() => setMobileNavOpen(false)}>
-                    TV Display Board
                   </Link>
                 </>
               )}

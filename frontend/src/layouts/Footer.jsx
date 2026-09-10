@@ -88,15 +88,6 @@ const Footer = () => {
                 <Mail size={16} className="text-primary flex-shrink-0" />
                 <span>support@careconnecthospital.com</span>
               </div>
-              <div className="mt-2">
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  className="btn btn-outline-primary btn-sm rounded-pill w-100 fw-semibold text-xs py-2"
-                >
-                  Open Public TV Waiting Screen
-                </Link>
-              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,6 @@ import {
   CalendarPlus, 
   Clock, 
   QrCode, 
-  Tv, 
   CheckCircle2, 
   Users, 
   ShieldCheck, 
@@ -96,15 +95,6 @@ const HomePage = () => {
                 >
                   <QrCode size={20} />
                   QR Check-in Kiosk
-                </Link>
-
-                <Link 
-                  to="/display" 
-                  target="_blank"
-                  className="btn btn-link text-decoration-none text-muted fw-semibold d-inline-flex align-items-center gap-1.5"
-                >
-                  <Tv size={18} />
-                  Public TV Screen &rarr;
                 </Link>
               </div>
 

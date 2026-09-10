@@ -117,7 +117,7 @@ const DoctorProfilePage = () => {
             Live Clinic Availability Status
           </h5>
           <p className="text-muted text-xs mb-3">
-            Your status is broadcasted in real-time to the Hospital TV display and Patient waiting screens.
+            Your status is synchronized in real-time across patient waiting portals and queue screens.
           </p>
 
           <div className="d-flex flex-wrap gap-2">
