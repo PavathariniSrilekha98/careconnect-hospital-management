@@ -64,6 +64,10 @@ Double-click `run_all.bat` in the project root to start both backend and fronten
 
 ---
 
+4.Live link
+**https://careconnect-backend-bg3s.onrender.com/
+https://careconnect-frontend-26ju.onrender.com
+
 ## 🔑 Demo Credentials
 
 | Role | Email | Password |
